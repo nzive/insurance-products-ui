@@ -1,0 +1,9 @@
+OAuth 2.0 Password Grant (Simplified)
+
+Client ID: test_client
+Client Secret: test_secret
+Username: user1
+Password: pass1
+
+The /oauth/token endpoint issues an access token.
+The /api/products endpoint requires a valid token.
