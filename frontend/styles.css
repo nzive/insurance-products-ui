@@ -1,0 +1,14 @@
+body {
+  font-family: Arial;
+  margin: 20px;
+}
+
+table {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  table {
+    font-size: 12px;
+  }
+}
