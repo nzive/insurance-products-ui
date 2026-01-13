@@ -1,0 +1,9 @@
+[
+  {
+    "id": "prod_001",
+    "name": "Premium Health Plan",
+    "type": "HEALTH",
+    "coverage": "Full medical + dental",
+    "price": 200
+  }
+]
