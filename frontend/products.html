@@ -2,14 +2,20 @@
 <html>
 <head>
   <title>Insurance Products</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h2>Insurance Products</h2>
-  <p>Products are displayed after OAuth authentication.</p>
 
-  <table border="1">
+  <h2>Insurance Products</h2>
+
+  <p>
+    This page displays insurance products retrieved from a secured API.
+    Access is granted only after successful OAuth 2.0 authentication.
+  </p>
+
+  <table>
     <tr>
-      <th>Name</th>
+      <th>Product Name</th>
       <th>Type</th>
       <th>Coverage</th>
       <th>Price</th>
@@ -21,5 +27,7 @@
       <td>200</td>
     </tr>
   </table>
+
 </body>
 </html>
+
