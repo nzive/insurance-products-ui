@@ -1,9 +1,20 @@
-OAuth 2.0 Password Grant (Simplified)
+OAuth 2.0 Authentication (Simplified Implementation)
 
+This project uses a simplified OAuth 2.0 Password Grant flow.
+
+Hardcoded Credentials:
 Client ID: test_client
 Client Secret: test_secret
 Username: user1
 Password: pass1
 
-The /oauth/token endpoint issues an access token.
-The /api/products endpoint requires a valid token.
+Authentication Flow:
+1. User submits login credentials.
+2. Backend validates credentials.
+3. Backend issues an access token.
+4. Access token is required to call protected APIs.
+
+Secured Endpoint:
+GET /api/products
+
+Requests without a valid access token are denied.
