@@ -1,0 +1,19 @@
+.product-container {
+    display: grid;
+    gap: 1rem;
+    padding: 20px;
+    /* Default: 1 column (Mobile)  */
+    grid-template-columns: 1fr;
+}
+
+/* Tablet  */
+@media (min-width: 600px) {
+    .product-container { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Desktop  */
+@media (min-width: 1000px) {
+    .product-container { grid-template-columns: repeat(3, 1fr); }
+}
+
+.product-card { border: 1px solid #ccc; padding: 15px; border-radius: 8px; }
