@@ -1,0 +1,15 @@
+name: Python Testing
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+    - name: Install dependencies
+      run: pip install flask pytest
+    - name: Run tests
+      run: pytest backend/tests_backend.py
