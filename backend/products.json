@@ -4,6 +4,6 @@
     "name": "Premium Health Plan",
     "type": "HEALTH",
     "coverage": "Full medical + dental",
-    "price": 200
+    "price": 200.00
   }
 ]
