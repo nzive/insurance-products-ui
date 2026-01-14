@@ -1,33 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Insurance Products</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+async function login() {
+    const formData = new FormData();
+    formData.append('grant_type', 'password');
+    formData.append('username', document.getElementById('username').value);
+    formData.append('password', document.getElementById('password').value);
+    formData.append('client_id', 'test_client'); // 
 
-  <h2>Insurance Products</h2>
+    const response = await fetch('http://localhost:5000/oauth/token', {
+        method: 'POST',
+        body: formData
+    });
 
-  <p>
-    This page displays insurance products retrieved from a secured API.
-    Access is granted only after successful OAuth 2.0 authentication.
-  </p>
-
-  <table>
-    <tr>
-      <th>Product Name</th>
-      <th>Type</th>
-      <th>Coverage</th>
-      <th>Price</th>
-    </tr>
-    <tr>
-      <td>Premium Health Plan</td>
-      <td>HEALTH</td>
-      <td>Full medical + dental</td>
-      <td>200</td>
-    </tr>
-  </table>
-
-</body>
-</html>
-
+    const data = await response.json();
+    if (data.access_token) {
+        localStorage.setItem('token', data.access_token);
+        window.location.href = 'products.html';
+    } else {
+        alert('Login Failed');
+    }
+}
