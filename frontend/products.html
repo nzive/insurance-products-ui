@@ -1,20 +1,10 @@
-async function login() {
-    const formData = new FormData();
-    formData.append('grant_type', 'password');
-    formData.append('username', document.getElementById('username').value);
-    formData.append('password', document.getElementById('password').value);
-    formData.append('client_id', 'test_client'); // 
-
-    const response = await fetch('http://localhost:5000/oauth/token', {
-        method: 'POST',
-        body: formData
-    });
-
-    const data = await response.json();
-    if (data.access_token) {
-        localStorage.setItem('token', data.access_token);
-        window.location.href = 'products.html';
-    } else {
-        alert('Login Failed');
-    }
-}
+<div class="product-grid">
+    {% for product in products %}
+    <div class="product-card">
+        <h3>{{ product.name }}</h3>
+        <p>Type: {{ product.type }}</p>
+        <p>{{ product.coverage }}</p>
+        <p><strong>${{ product.price }}</strong></p>
+    </div>
+    {% endfor %}
+</div>
