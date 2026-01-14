@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<div class="product-container">
+    {% for product in products %}
+    <div class="product-card">
+        <h3>{{ product.name }}</h3>
+        <p><strong>Type:</strong> {{ product.type }}</p>
+        <p>{{ product.coverage }}</p>
+        <p class="price">${{ product.price }}</p>
+    </div>
+    {% endfor %}
+</div>
